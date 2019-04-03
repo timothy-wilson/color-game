@@ -1,13 +1,13 @@
 body{
-    margin: 0;
-    background-color: darkgrey;
+    background-image: linear-gradient(to bottom right, rgb(20, 20, 20), rgb(100, 100, 100));
+    margin-block-end: 100%;
 }
 
 h1{
     grid-area: 1 / 1 / 2 / 4;
     text-align: center;
     color: white;
-    background-color: steelblue;
+    background-image: linear-gradient(rgb(30, 30, 200), rgb(90, 110, 200));
     text-transform: uppercase;
     margin: 0px;
 }
@@ -28,6 +28,40 @@ h1{
     max-width: 600px
 }
 
+#stripe{
+    height: 20px;
+    padding: 10px 20px;
+    background-color: rgb(100, 130, 200);
+    text-align: center;
+    font-size: large;
+}
+
+.mode{
+    float: right;
+    margin: 2px 2px;
+    border-radius: 10px;
+    padding: 0px 20px;
+    border: 2px solid rgb(60, 60, 60);
+    background-color: rgb(100, 130, 200);
+}
+
+.mode:hover{
+    background-color: rgb(80, 80, 80);
+}
+
+#reset{
+    float: left;
+    margin: 2px 2px;
+    border-radius: 10px;
+    padding: 0px 20px;
+    border: 2px solid rgb(60, 60, 60);
+    background-color: rgb(100, 130, 200);
+}
+
+#reset:hover{
+    background-color: rgb(80, 80, 80);
+}
+
 #message{
-    margin: 50px 50px;
+    margin: auto auto
 }

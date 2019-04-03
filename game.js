@@ -31,8 +31,11 @@ const setup = () => {
   colors = generateRandomColor(numSquares);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
-  for(i=0; i<squares.length; i++) {
+  for(i=0; i<numSquares; i++) {
    squares[i].style.backgroundColor = colors[i];
+  }
+  for(i=numSquares; i<=squares.length; i++) {
+    squares[i].style.backgroundColor = "rgba(0, 0, 0, 0)"
   }
 }
 
@@ -49,9 +52,6 @@ for(i=0; i<2; i++) {
     if(this.textContent === "easy") {
       numSquares = 3;
       setup();
-      for(i=3; i<6; i++) {
-        squares[i].style.backgroundColor = "darkgrey"
-      }
     }else {
       numSquares = 6;
       setup();
@@ -65,12 +65,12 @@ for(i=0; i<= squares.length; i++) {
   squares[i].addEventListener('click', function() {
     let clickedColor = this.style.backgroundColor;
     if(pickedColor === clickedColor) {
-      squares.forEach(square => {
-        square.style.backgroundColor = pickedColor;
-        messageDisplay.textContent = "You are good at guessing!";
-      })
+      for(i=0; i<numSquares; i++) {
+        squares[i].style.backgroundColor = pickedColor;
+        messageDisplay.textContent = "You are good at geussing";
+      }
     } else {
-      this.style.backgroundColor = "darkgrey";
+      this.style.backgroundColor = "rgba(0, 0, 0, 0)";
       messageDisplay.textContent = "Wrong Choice!";
     }
   });
