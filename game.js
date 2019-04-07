@@ -84,7 +84,7 @@ for(i=0; i< squares.length; i++) {
       }
     } else {
       this.style.backgroundColor = "rgba(0, 0, 0, 0)";
-      messageDisplay.textContent = "Wrong Choice!";
+      messageDisplay.textContent = "Nope!";
     }
   });
 };
