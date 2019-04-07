@@ -34,11 +34,22 @@ const setup = () => {
   for(i=0; i<numSquares; i++) {
    squares[i].style.backgroundColor = colors[i];
   }
-  for(i=numSquares; i<=squares.length; i++) {
+  for(i=numSquares; i<squares.length; i++) {
     squares[i].style.backgroundColor = "rgba(0, 0, 0, 0)"
   }
 }
 
+const toggle = () => {
+  if(numSquares === 6) {
+    modeButtons[0].classList.remove("on");
+    modeButtons[1].classList.add("on");
+  } else {
+    modeButtons[0].classList.add("on");
+    modeButtons[1].classList.remove("on");
+  }
+}
+
+toggle();
 colors = generateRandomColor(numSquares);
 pickedColor = colors[3];
 colorDisplay.innerHTML = pickedColor;
@@ -51,15 +62,17 @@ for(i=0; i<2; i++) {
   modeButtons[i].addEventListener("click", function() {
     if(this.textContent === "easy") {
       numSquares = 3;
+      toggle();
       setup();
     }else {
       numSquares = 6;
+      toggle();
       setup();
     }
   });
 }
 
-for(i=0; i<= squares.length; i++) {
+for(i=0; i< squares.length; i++) {
   squares[i].style.backgroundColor = colors[i];
 
   squares[i].addEventListener('click', function() {
@@ -67,7 +80,7 @@ for(i=0; i<= squares.length; i++) {
     if(pickedColor === clickedColor) {
       for(i=0; i<numSquares; i++) {
         squares[i].style.backgroundColor = pickedColor;
-        messageDisplay.textContent = "You are good at geussing";
+        messageDisplay.textContent = "Good job!";
       }
     } else {
       this.style.backgroundColor = "rgba(0, 0, 0, 0)";
